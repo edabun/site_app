@@ -1,4 +1,6 @@
 <% provide(:title, "Sign Up") %>
+
+
 <h1>Users#new</h1>
 
 <%= form_for(@user, url: signup_path) do |f| %>
@@ -8,7 +10,7 @@
   <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label :email %>
-  <%= f.text_field :email, class: 'form-control' %>
+  <%= f.email_field :email, class: 'form-control' %>
 
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
