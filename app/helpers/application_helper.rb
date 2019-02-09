@@ -7,4 +7,12 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def redirect(title = '')
+    if title == "Sign Up"
+      signup_path
+    else
+      nil
+    end
+  end
 end
