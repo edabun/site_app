@@ -1,0 +1,6 @@
+<% if @sites_list.any? %>
+  <ol class="sites">
+    <%= render @sites_list %>
+  </ol>
+  <%= will_paginate @sites_list %>
+<% end %>

@@ -10,6 +10,9 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'rails-ujs'
 gem 'faker'
+gem 'urlscan'
+gem 'jquery-datatables'
+gem 'health_check'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'carrierwave',             '1.2.2'
@@ -80,5 +83,9 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+
+gem 'rails-assets-jquery', source: 'https://rails-assets.org'
+gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+gem 'kaminari'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

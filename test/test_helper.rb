@@ -17,6 +17,15 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+
+  def full_title(page_title = '')
+    base_title = 'Site App'
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
+  end
 end
 
 class ActionDispatch::IntegrationTest

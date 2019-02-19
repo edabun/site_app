@@ -20,3 +20,9 @@ User.create!(name: "Example User",
   	            password: password,
   	            password_confirmation: password)
 end
+
+# users = User.order(:created_at).take(6)
+# 50.times do |n|
+#   name = "http://www.website-#{n+1}.com"
+#   users.each { |user| user.sites.create!(name: name) }
+# end

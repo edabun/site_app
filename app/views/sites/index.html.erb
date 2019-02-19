@@ -1,8 +1,7 @@
-<% provide(:title, "All Users") %>
-<h1>Users</h1>
-
+<% provide(:title, "All Sites") %>
+<h1>Sites</h1>
 <div class="row">
-  <%= content_tag :table, role: :datatable, data: { url: users_path(format: :json)} do %>
+  <%= content_tag :table, role: :datatable, data: { url: sites_path(format: :json)} do %>
     <thead>
       <tr>
         <th>Name</th>

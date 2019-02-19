@@ -1,0 +1,16 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render 'shared/user_info' %>
+    </section>
+    <% # if current_user.admin? %>
+      <section class="site_form">
+        <%= render 'shared/site_form' %>
+      </section>
+    <% # end %> 
+  </aside>
+  <div class="col-md-8">
+    <h3>Recently added</h3>
+    <%= render 'shared/site_list' %>
+  </div>
+</div>

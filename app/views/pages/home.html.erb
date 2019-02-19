@@ -1,4 +1,5 @@
-<% provide(:title, 'Home') %>
-<h1>Site home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Sign Up", signup_path, class: "btn"%>
+<% if logged_in? %>
+  <%= render 'pages/logged_in_home' %>
+<% else %>
+  <%= render 'pages/non_logged_in_home' %>
+<% end %>

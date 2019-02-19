@@ -54,4 +54,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "associated sites should be destroyed" do
+    @user.save
+    @user.sites.create!(name: "http://loremipsum.com")
+    assert_difference 'Site.count', -1 do
+      @user.destroy
+    end
+  end
 end
