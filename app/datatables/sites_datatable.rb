@@ -7,7 +7,6 @@ class SitesDatatable < ApplicationDatatable
       sites.map do |site|
         [].tap  do |column|
           column << site.name
-          column << site.user.name
 
           links = []
           links << link_to('Show', site)
@@ -22,8 +21,7 @@ class SitesDatatable < ApplicationDatatable
     end
 
     def total_entries
-      # sites.total_count # kaminari
-      sites.total_entries # (will_paginate)
+      sites.total_entries
     end
 
     def sites
@@ -37,12 +35,11 @@ class SitesDatatable < ApplicationDatatable
       end
 
       sites = Site.order("#{sort_column} #{sort_direction}")
-      # sites = sites.page(page).per(per_page)  # kaminari
+      sites = Site.page(page).per_page(per_page)
       sites = sites.where(search_string.join(' or '), search: "%#{params[:search][:value]}%")
-      sites = Site.page(page).per_page(per_page) # will_paginate
     end
 
     def columns
-      %w(name user.name)
+      %w(name)
     end
 end

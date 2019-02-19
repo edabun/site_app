@@ -5,7 +5,7 @@ class UsersDatatable < ApplicationDatatable
     def data
       users.map do |user|
         [].tap do |column|
-          column << user.name
+          column << link_to(user.name, user)
           column << user.email
 
           links = []
@@ -35,8 +35,8 @@ class UsersDatatable < ApplicationDatatable
       end
 
       users = User.order("#{sort_column} #{sort_direction}")
-      users = users.where(search_string.join(' or '), search: "%#{params[:search][:value]}%")
       users = User.page(page).per_page(per_page)
+      users = users.where(search_string.join(' or '), search: "%#{params[:search][:value]}%")
     end
 
     def columns

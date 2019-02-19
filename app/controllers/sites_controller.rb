@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy] 
+  before_action :logged_in_user, only: [:index, :create, :destroy] 
   before_action :correct_user,   only: [:destroy]
   # before_action :admin_user,   only: [:index, :destroy]
   before_action :admin_user,     only: :index
