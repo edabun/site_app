@@ -1,3 +1,13 @@
 <h1><%= @site.name %></h1>
 
-<p><%= url_search(@site.name)[0] %></p>
+<div class="row">
+  <aside class="col-md-4">
+  	<section>
+      <p><%= url_search(@site.name)[0] %></p>
+  	</section>
+  </aside>
+  <div class="col-md-8">
+	  <% image(@site.name) %>
+      <%= image_tag 'output.png', :class => 'user_avatars' %>
+  </div>
+</div>

@@ -16,8 +16,9 @@ gem 'health_check'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'carrierwave',             '1.2.2'
-gem 'mini_magick',             '4.7.0'
-gem 'bootstrap-will_paginate'
+gem 'mini_magick'
+gem 'gastly'
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server

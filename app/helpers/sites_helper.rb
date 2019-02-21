@@ -8,12 +8,28 @@ module SitesHelper
     res = api.submit(url)
   end
 
-  def url_search(url)
-    api = UrlScan::API.new("817ef289-c89a-410f-bc00-6b0ed8a1753b")
-    ext = %w[http:// https://]
+  def format_site(url)
+    ext = %w[http:// https:// http://www https://www]
     site = url
 
-    ext.each { |x| site.sub!(x,"") }
-    return api.search(site)["results"]
+    ext.each { |x| return site.sub!(x,"") }
   end
+
+  def url_search(url)
+    api = UrlScan::API.new("817ef289-c89a-410f-bc00-6b0ed8a1753b")
+
+    return api.search(url)["results"]
+  end
+
+  def image(website)
+    sc = Gastly.screenshot('http://' + website)
+    sc.browser_width = 780 # Default: 1440px
+    sc.browser_height = 780 # Default: 900px
+    sc.timeout = 1000
+    sc.phantomjs_options = '--ignore-ssl-errors=true'
+    image = sc.capture
+    image.format('png')
+    image.save(Rails.root.join("app", "assets", "images", "output.png")) 
+  end
+
 end

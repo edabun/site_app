@@ -6,10 +6,10 @@ class SitesDatatable < ApplicationDatatable
     def data
       sites.map do |site|
         [].tap  do |column|
-          column << site.name
+          column << link_to(site.name, site)
+          column << site.created_at.strftime("%b %d, %Y %l:%M %p %Z")
 
           links = []
-          links << link_to('Show', site)
           links << link_to('Delete', site, method: :delete, data: { confirm: 'Are you sure?'} )
           column << links.join(' | ')
         end
@@ -40,6 +40,6 @@ class SitesDatatable < ApplicationDatatable
     end
 
     def columns
-      %w(name)
+      %w(name created_at)
     end
 end

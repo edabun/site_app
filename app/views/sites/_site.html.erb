@@ -1,6 +1,5 @@
 <li id="site-<%= site.id %>">
   <span class="site"><%= link_to site.name, site %>
-  <span>User: <b><%= site.name %>,<%= site.user.id %></b></span>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(site.created_at)%> ago.

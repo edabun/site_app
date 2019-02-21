@@ -9,7 +9,6 @@
   </aside>
 
   <div class="col-md-8">
-    <% if @user.sites.any? %>
       <% if @user==current_user %>
         <h3> My Sites (<%= @user.sites.count %>)</h3>
       <% else %>
@@ -19,6 +18,5 @@
         <%= render @sites %>
       </ol>
       <%= will_paginate @sites %>
-    <% end %>
   </div>
 </div>

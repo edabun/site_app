@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
-
+  include SitesHelper
 
   # Confirms a logged in user
   def logged_in_user
