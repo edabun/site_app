@@ -20,15 +20,4 @@ module SitesHelper
 
     return api.search(url)["results"]
   end
-
-  def image(website)
-    sc = Gastly.screenshot('http://' + website)
-    sc.browser_width = 780 # Default: 1440px
-    sc.browser_height = 780 # Default: 900px
-    sc.timeout = 1000
-    image = sc.capture
-    image.format('png')
-    image.save(Rails.root.join("app", "assets", "images", "output.png")) 
-  end
-
 end
