@@ -7,7 +7,6 @@ class SitesDatatable < ApplicationDatatable
       sites.map do |site|
         [].tap  do |column|
           column << link_to(site.name, site)
-          column << site.created_at.strftime("%b %d, %Y %l:%M %p %Z")
 
           links = []
           links << link_to('Delete', site, method: :delete, data: { confirm: 'Are you sure?'} )
@@ -40,6 +39,6 @@ class SitesDatatable < ApplicationDatatable
     end
 
     def columns
-      %w(name created_at)
+      %w(name)
     end
 end
