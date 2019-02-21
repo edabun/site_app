@@ -260,9 +260,6 @@ GEM
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
-    gastly (1.0.1)
-      mini_magick (~> 4.2)
-      phantomjs (~> 2.1.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     guard (2.15.0)
@@ -346,7 +343,6 @@ GEM
     ovirt-engine-sdk (4.3.0)
       json (>= 1, < 3)
     pg (1.1.4)
-    phantomjs (2.1.1.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -484,7 +480,6 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fog (= 1.42)
-  gastly
   guard
   guard-minitest
   health_check
